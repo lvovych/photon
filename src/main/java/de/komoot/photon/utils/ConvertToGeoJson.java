@@ -22,8 +22,8 @@ public class ConvertToGeoJson extends Converter<List<JSONObject>, JSONObject> {
     @Override
     public JSONObject doForward(List<JSONObject> listOfPlaces) {
         final JSONObject collection = new JSONObject();
-        collection.put("type", "FeatureCollection");
-        collection.put("features", new JSONArray(listOfPlaces));
+        collection.put("meta", new JSONObject().put("total_results", listOfPlaces.size()));
+        collection.put("data", new JSONArray(listOfPlaces));
 
         return collection;
     }

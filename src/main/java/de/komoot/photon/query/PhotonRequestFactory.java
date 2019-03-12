@@ -40,7 +40,7 @@ public class PhotonRequestFactory {
         try {
             limit = Integer.valueOf(webRequest.queryParams("limit"));
         } catch (NumberFormatException e) {
-            limit = 15;
+            limit = 10;
         }
         Point locationForBias = optionalLocationParamConverter.apply(webRequest);
 
